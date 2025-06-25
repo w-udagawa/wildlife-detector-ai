@@ -1,115 +1,145 @@
-# 🚀 Claudeworks - AI Development Workspace
+# Wildlife Detector AI v2.0
 
-Welcome to Claudeworks - A organized workspace for AI-powered applications and experiments.
+AI-powered wildlife species detection application using Google SpeciesNet.
 
-## 📁 Directory Structure
+## 🌟 Features
 
-```
-Claudeworks/
-├── projects/              # Individual project folders
-│   ├── wildlife-detector/ # Wildlife detection app using SpeciesNet
-│   ├── kankyo-news/      # Environmental news aggregator
-│   └── teams-ai-bot/     # Microsoft Teams AI chatbot
-│
-├── environments/         # Python virtual environments
-│   └── wildlife_env_312/ # Python 3.12 environment
-│
-├── shared/              # Shared resources across projects
-│   ├── testimages/      # Test images for various projects
-│   └── results/         # Output results directory
-│
-├── docs/                # Documentation
-│   ├── QUICKSTART.md    # Quick start guide
-│   └── CONTRIBUTING.md  # Contribution guidelines
-│
-└── scripts/             # Utility scripts
-```
+- **High Accuracy**: 94.5% species-level classification accuracy using Google SpeciesNet
+- **Batch Processing**: Process thousands of images efficiently
+- **Multiple Output Formats**: CSV export with detailed detection results
+- **Automatic File Organization**: Organize images by detected species
+- **GUI and CLI**: User-friendly desktop interface and command-line tools
+- **Research-Ready**: English/scientific names for academic use
 
-## 🎯 Projects Overview
+## 📋 Requirements
 
-### 1. Wildlife Detector 🦅
-- **Description**: Desktop application for detecting wildlife in images
-- **Tech Stack**: Python, PySide6, Google SpeciesNet
-- **Status**: Active development
-- **Repository**: [GitHub](https://github.com/w-udagawa/wildlife-speciesnet-detector)
+- Python 3.12.10+
+- Windows 10/11 (Linux/macOS support coming soon)
+- 4GB+ RAM recommended
+- GPU optional (for faster processing)
 
-### 2. Kankyo News 📰
-- **Description**: Environmental news aggregator and analyzer
-- **Tech Stack**: Python, Web scraping
-- **Status**: In development
+## 🚀 Quick Start
 
-### 3. Teams AI Bot 🤖
-- **Description**: AI-powered chatbot for Microsoft Teams
-- **Tech Stack**: Python, Microsoft Bot Framework
-- **Status**: Prototype
+### Installation
 
-## 🛠️ Getting Started
-
-### Prerequisites
-- Python 3.12+
-- Git
-- Virtual environment tool (venv)
-
-### Setting Up a Project
-
-1. Navigate to the project directory:
-   ```bash
-   cd projects/[project-name]
-   ```
-
-2. Activate the appropriate virtual environment:
-   ```bash
-   # For wildlife-detector
-   ..\..\environments\wildlife_env_312\Scripts\activate
-   ```
-
-3. Install project dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-4. Run the project:
-   ```bash
-   python main.py
-   ```
-
-## 📝 Development Guidelines
-
-### Project Structure
-Each project should follow this structure:
-```
-project-name/
-├── src/           # Source code
-├── tests/         # Unit tests
-├── docs/          # Project documentation
-├── requirements.txt
-├── README.md
-└── .gitignore
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/wildlife-detector.git
+cd wildlife-detector
 ```
 
-### Virtual Environments
-- Create separate environments for projects with different dependencies
-- Name format: `{project}_env_{python_version}`
-- Store in `environments/` directory
+2. Run the setup script:
+```bash
+scripts\quick_setup.bat
+```
 
-### Shared Resources
-- Test data goes in `shared/testimages/`
-- Output files go in `shared/results/`
-- Don't store sensitive data in shared folders
+Or manually:
+```bash
+python -m venv venv
+venv\Scripts\activate
+pip install -r requirements.txt
+```
+
+### Usage
+
+#### GUI Mode (Recommended)
+```bash
+python main.py
+```
+
+#### CLI Mode
+```bash
+# Single image
+python main.py --image path/to/image.jpg
+
+# Batch processing
+python main.py --batch path/to/image/folder --output results/
+```
+
+## 📁 Project Structure
+
+```
+wildlife-detector/
+├── core/               # Core detection modules
+├── gui/                # GUI components
+├── utils/              # Utility functions
+├── scripts/            # Setup and utility scripts
+├── tests/              # Test files and scripts
+├── docs/               # Documentation
+│   ├── development/    # Development notes
+│   └── user/           # User guides
+├── config.yaml         # Configuration file
+├── main.py             # Main entry point
+└── requirements.txt    # Python dependencies
+```
+
+## 🔧 Configuration
+
+Edit `config.yaml` to customize:
+- Detection confidence threshold
+- Output formats
+- Processing options
+- GUI preferences
+
+## 📊 Output Format
+
+Detection results are exported as CSV with the following columns:
+- **Image File**: Source image filename
+- **Species Name**: Detected species (scientific/common name)
+- **Confidence**: Detection confidence (0-1)
+- **Category**: Animal category (bird, mammal, etc.)
+- **Bounding Box**: Object location coordinates
+
+## 🗂️ File Organization
+
+The application can automatically organize detected images into species folders:
+```
+output/
+├── Corvus_macrorhynchos/    # Large-billed crow
+├── Ardea_sp/                # Heron species
+├── Sus_scrofa/              # Wild boar
+├── no_detection/            # No animals detected
+└── low_confidence/          # Below threshold
+```
+
+## 🧪 Testing
+
+Run tests using the provided scripts:
+```bash
+# Test CLI functionality
+tests\scripts\test_cli.bat
+
+# Test with sample images
+tests\scripts\test_crow.bat
+```
+
+## 📝 Documentation
+
+- [CLAUDE.md](CLAUDE.md) - Development guide
+- [SPECIESNET_GUIDE.md](SPECIESNET_GUIDE.md) - SpeciesNet usage guide
+- [docs/](docs/) - Additional documentation
 
 ## 🤝 Contributing
 
-See [docs/CONTRIBUTING.md](docs/CONTRIBUTING.md) for contribution guidelines.
+Contributions are welcome! Please read our contributing guidelines and submit pull requests.
 
 ## 📄 License
 
-Individual projects may have their own licenses. Check each project's LICENSE file.
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-## 🔗 Quick Links
+## 🙏 Acknowledgments
 
-- [Wildlife Detector README](projects/wildlife-detector/README.md)
-- [Quick Start Guide](docs/QUICKSTART.md)
-- [Python Setup Guide](docs/python_setup.md)
+- Google SpeciesNet team for the amazing wildlife detection model
+- All contributors and testers
+
+## 📞 Support
+
+For issues and questions:
+- Create an issue on GitHub
+- Check the documentation in the `docs/` folder
 
 ---
-*Last updated: June 2025*
+
+**Version**: 2.0.0  
+**Last Updated**: 2025-06-25  
+**Status**: Production Ready

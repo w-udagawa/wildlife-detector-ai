@@ -1,0 +1,44 @@
+app:
+  name: Wildlife Detector AI
+  version: 2.0.0
+  debug: false
+detection:
+  model_name: speciesnet
+  model_version: '5.0'
+  country_code: JPN
+  confidence_threshold: 0.5
+  batch_size: 1
+  timeout: 300
+  max_detections_per_image: 10
+processing:
+  max_workers: 4
+  chunk_size: 10
+  use_gpu: false
+  memory_limit_gb: 4.0
+  max_image_size_mb: 50.0
+  resize_large_images: true
+output:
+  default_output_directory: output
+  csv_delimiter: ','
+  csv_encoding: utf-8-sig
+  generate_html_report: true
+  include_thumbnails: true
+  auto_save_results: true
+gui:
+  window_title: Wildlife Detector - 野生生物検出アプリケーション
+  window_width: 1920
+  window_height: 1009
+  min_width: 1000
+  min_height: 700
+  theme: light
+  language: ja
+paths:
+  temp_directory: temp
+  cache_directory: cache
+  logs_directory: logs
+logging:
+  enable: true
+  level: INFO
+cache:
+  enable: true
+  size_mb: 500

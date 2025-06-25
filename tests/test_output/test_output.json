@@ -1,0 +1,13 @@
+{
+    "predictions": [
+        {
+            "filepath": "tests/test_data/images/test_green.jpg",
+            "failures": [
+                "CLASSIFIER",
+                "DETECTOR"
+            ],
+            "country": "JPN",
+            "model_version": "4.0.1a"
+        }
+    ]
+}
