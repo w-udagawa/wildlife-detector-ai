@@ -18,7 +18,7 @@ processing:
   max_image_size_mb: 50.0
   resize_large_images: true
 output:
-  default_output_directory: output
+  default_output_directory: C:/Users/AU3009/Desktop/test_results
   csv_delimiter: ','
   csv_encoding: utf-8-sig
   generate_html_report: true
@@ -26,8 +26,8 @@ output:
   auto_save_results: true
 gui:
   window_title: Wildlife Detector - 野生生物検出アプリケーション
-  window_width: 1920
-  window_height: 1009
+  window_width: 1200
+  window_height: 800
   min_width: 1000
   min_height: 700
   theme: light
